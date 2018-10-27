@@ -1,5 +1,12 @@
 class Pipes {
     constructor(game) {
+        this.game = game
+
+        this.setup()
+    }
+    setup() {
+        var game = this.game
+
         this.active = false
         this.game = game
         this.pipes = []
@@ -17,6 +24,10 @@ class Pipes {
             this.pipes.push(p1)
             this.pipes.push(p2)
         }
+    }
+    static instance(...args) {
+        this.i = this.i || new this(...args)
+        return this.i
     }
     static new(game) {
         return new this(game)

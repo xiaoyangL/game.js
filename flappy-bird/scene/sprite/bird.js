@@ -2,6 +2,15 @@ class Bird extends LuoAnimation {
     constructor(game) {
         super(game)
         this.addFrames('bird', 3)
+        this.setup()
+    }
+    static instance(...args) {
+        this.i = this.i || new this(...args)
+        return this.i
+    }
+    setup() {
+        this.x = 150
+        this.y = 250
         this.active = false
         // 重力和加速度
         this.gy = 10
@@ -25,7 +34,7 @@ class Bird extends LuoAnimation {
             var h = 500
             if (this.y > h) {
                 this.y = h
-                this.scene.endGame()
+                // this.scene.endGame()
             }
             // 更新角度
             if (this.rotation < 90) {

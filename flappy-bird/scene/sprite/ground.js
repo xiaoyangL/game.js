@@ -1,6 +1,10 @@
 class Grounds {
     constructor(game, name) {
         this.game = game
+        this.setup()
+    }
+    setup() {
+        var game = this.game
         this.grounds = []
         this.skipCount = 4
 
@@ -10,6 +14,10 @@ class Grounds {
             g.y = 530
             this.grounds.push(g)
         }
+    }
+    static instance(...args) {
+        this.i = this.i || new this(...args)
+        return this.i
     }
     static new(game) {
         return new this(game)

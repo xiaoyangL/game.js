@@ -23,11 +23,11 @@ var __main = function() {
         ground: 'img/ground.png',
         pipe: 'img/pipe.png',
     }
-    game = LuoGame.instance(30, images, function(g) {
-        var s = SceneMain.new(g)
-        g.runWithScene(s)
-        // var s = Scene.new(g)
+    var game = LuoGame.instance(30, images, function(g) {
+        // var s = SceneMain.new(g)
         // g.runWithScene(s)
+        var s = SceneTitle.new(g)
+        g.runWithScene(s)
     })
 
     enableDebugMode(game, true)
