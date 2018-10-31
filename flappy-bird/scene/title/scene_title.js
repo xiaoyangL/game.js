@@ -20,10 +20,7 @@ class SceneTitle extends SceneBase {
         var g = this.game
         window.addEventListener('mouseup', function() {
             if (self.active) {
-                self.active = false
-                //
-                var s = SceneMain.new(g)
-                g.replaceScene(s)
+                self.changeScene(SceneMain)
             }
         })
     }

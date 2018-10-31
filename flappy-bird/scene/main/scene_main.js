@@ -23,16 +23,12 @@ class SceneMain extends SceneBase {
     }
     update() {
         super.update()
-        var g = this.game
         var pipes = this.pipe.pipes
         var bird = this.bird
 
         for (var p of pipes) {
             if (p.collide(bird)) {
-                this.active = false
-                //
-                var s = SceneEnd.new(g)
-                g.replaceScene(s)
+                this.changeScene(SceneEnd)
             }
         }
     }

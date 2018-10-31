@@ -5,6 +5,12 @@ class SceneBase extends LuoScene {
     static new(game) {
         return new this(game)
     }
+    changeScene(scene) {
+        this.active = false
+        var g = this.game
+        var s = scene.new(g)
+        g.replaceScene(s)
+    }
     loadBaseElement() {
         var game = this.game
         this.active = true

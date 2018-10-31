@@ -34,7 +34,8 @@ class Bird extends LuoAnimation {
             var h = 500
             if (this.y > h) {
                 this.y = h
-                // this.scene.endGame()
+                //
+                this.scene.changeScene(SceneEnd)
             }
             // 更新角度
             if (this.rotation < 90) {
