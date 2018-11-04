@@ -9,7 +9,7 @@ class Level {
     }
     setup() {
         this.numberOfLevel = 1
-        this.levels = {}
+        this.levels = localStorage
     }
     loadDatas(numberOfLevel) {
         /*
@@ -22,7 +22,7 @@ class Level {
         var game = this.game
         var n = numberOfLevel
         var self = this
-        var level = self.levels[n]
+        var level = JSON.parse(self.levels[n])
         var blocks = []
 
         for (var i = 0; i < level.length; i++) {
@@ -37,11 +37,10 @@ class Level {
         var level = []
         for (var i = 0; i < blocks.length; i++) {
             var b = blocks[i]
-            // 1 的位置是 block 的生命,
-            var p = [b.x, b.y, 1]
+            var p = [b.x, b.y, b.lifes]
             level.push(p)
         }
 
-        self.levels[numberOfLevel] = level
+        self.levels[numberOfLevel] = JSON.stringify(level)
     }
 }

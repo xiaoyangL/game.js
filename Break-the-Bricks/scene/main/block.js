@@ -56,8 +56,10 @@ class Blocks {
     }
     removeDeadBlock(block) {
         var self = this
-        var p = self.blocks.indexOf(block)
-        self.blocks.splice(p, 1)
+        if (!block.alive) {
+            var p = self.blocks.indexOf(block)
+            self.blocks.splice(p, 1)
+        }
     }
     draw() {
         var self = this

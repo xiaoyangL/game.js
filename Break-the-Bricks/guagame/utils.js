@@ -23,8 +23,8 @@ const rectIntersects = function(a, b) {
 
 const pointInRect = function(rect, x, y) {
     var o = rect
-    var xIn = x >= o.x && x <= o.x + o.w
-    var yIn = y >= o.y && y <= o.y + o.h
+    var xIn = (x >= o.x) && (x <= o.x + o.w)
+    var yIn = (y >= o.y) && y <= (o.y + o.h)
     return xIn && yIn
 }
 
