@@ -8,6 +8,9 @@ class Bird extends LuoAnimation {
         this.i = this.i || new this(...args)
         return this.i
     }
+    startMove() {
+        this.active = true
+    }
     setup() {
         this.x = 150
         this.y = 250
@@ -21,7 +24,7 @@ class Bird extends LuoAnimation {
         this.vy = -10
         this.rotation = -45
     }
-    die() {
+    fall() {
         this.vy = 30
         this.rotation = 90
     }

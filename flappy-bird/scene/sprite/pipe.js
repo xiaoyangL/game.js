@@ -4,6 +4,12 @@ class Pipes {
 
         this.setup()
     }
+    startMove() {
+        this.active = true
+    }
+    stopMove() {
+        this.active = false
+    }
     setup() {
         var game = this.game
 

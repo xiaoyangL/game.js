@@ -17,6 +17,6 @@ class SceneEnd extends SceneBase {
     }
     update() {
         super.update()
-        this.bird.die()
+        this.bird.fall()
     }
 }

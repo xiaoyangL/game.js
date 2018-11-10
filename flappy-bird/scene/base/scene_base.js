@@ -25,12 +25,12 @@ class SceneBase extends LuoScene {
     }
     startGame() {
         // 开始游戏后才让 bird 和 pipe 移动
-        this.bird.active = true
-        this.pipe.active = true
+        this.bird.startMove()
+        this.pipe.startMove()
     }
     endGame() {
         // 让所有 element 停止
         this.active = false
-        this.pipe.active = false
+        this.pipe.stopMove()
     }
 }
