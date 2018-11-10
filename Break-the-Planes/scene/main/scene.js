@@ -96,19 +96,19 @@ class Scene extends LuoScene {
     setupInputs() {
         var g = this.game
         var s = this
-        g.registerAction('ArrowLeft', function(){
+        g.registerAction('ArrowLeft', function() {
             s.player.moveLeft()
         })
-        g.registerAction('ArrowRight', function(){
+        g.registerAction('ArrowRight', function() {
             s.player.moveRight()
         })
-        g.registerAction('ArrowUp', function(){
+        g.registerAction('ArrowUp', function() {
             s.player.moveUp()
         })
-        g.registerAction('ArrowDown', function(){
+        g.registerAction('ArrowDown', function() {
             s.player.moveDown()
         })
-        g.registerAction(' ', function(){
+        g.registerAction(' ', function() {
             s.player.fire()
         })
     }

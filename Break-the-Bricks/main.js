@@ -28,6 +28,7 @@ var __main = function() {
     }
     var game = GuaGame.instance(30, images, function(g) {
         var s = SceneTitle.new(g)
+        // var s = SceneEnd.new(g)
         g.runWithScene(s)
     })
     enableDebugMode(game, true)

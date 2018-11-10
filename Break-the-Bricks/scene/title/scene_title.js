@@ -6,26 +6,33 @@ class SceneTitle extends GuaScene {
     }
     setup() {
         var game = this.game
-        this.bg = GuaImage.new(game, 'bg')
-        this.editLabel = Label.new(game)
-        this.editLabel.init(150, 200, '按 e 编辑游戏', 50, '#FFF')
-        this.startLable = Label.new(game)
-        this.startLable.init(150, 300, '按 k 开始游戏', 50, '#FFF')
+        this.active = true
+        this.startRect = Rect.new(game)
+        this.editRect = Rect.new(game)
+        // x, y, width, height, color, text, fontSize, fontColor
+        this.startRect.init(200, 100, 200, 80, 'green', '开始游戏', 30, 'white')
+        this.editRect.init(200, 300, 200, 100, 'green', '编辑游戏', 30, 'white')
 
-        this.addElement(this.bg)
-        this.addElement(this.editLabel)
-        this.addElement(this.startLable)
-
+        this.addElement(this.startRect)
+        this.addElement(this.editRect)
     }
     setupInputs() {
         var game = this.game
-        game.registerAction('e', function() {
-            var s = SceneLevel.new(game)
-            game.replaceScene(s)
-        })
-        game.registerAction('k', function() {
-            var s = SceneMain.new(game)
-            game.replaceScene(s)
+        var self = this
+        // mouse event
+        game.canvas.addEventListener('mousedown', function(event) {
+            if (self.active) {
+                var x = event.offsetX
+                var y = event.offsetY
+                if (pointInRect(self.startRect, x, y)) {
+                    var s = SceneMain.new(game)
+                    game.replaceScene(s)
+                } else if (pointInRect(self.editRect, x, y)) {
+                    var s = SceneLevel.new(game)
+                    game.replaceScene(s)
+                }
+                self.active = false
+            }
         })
     }
 }

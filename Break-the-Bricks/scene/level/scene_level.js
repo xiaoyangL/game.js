@@ -8,8 +8,10 @@ class SceneLevel extends GuaScene {
         this.blocks = Blocks.new(this.game)
         //
         this.numberOfLevel = 1
+
         var text = '第' + this.numberOfLevel + '关'
         this.levelLabel = Label.new(this.game)
+        // x, y, text, fontSize, fontColor
         this.levelLabel.init(250, 15, text, 15)
         //
         this.label = Label.new(this.game)
@@ -83,7 +85,6 @@ class SceneLevel extends GuaScene {
             var block = Block.new(game, blockArgs)
             self.blocks.push(block)
         })
-
     }
     draw() {
         this.drawGrid('#ccc', 50, 20)
